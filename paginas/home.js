@@ -44,26 +44,8 @@ function Home() {
     buscador.addEventListener("input", () => {
         buscadorfuncion(buscador.value);
     });
-
-    const autoresEjemplo = ["Alejandro", "John", "Maria", "All"];
     const contenedorFiltro = document.createElement("div");
     contenedorFiltro.classList.add("tipos-container");
-
-    for (let i = 0; i < autoresEjemplo.length; i++) {
-        const autor = autoresEjemplo[i];
-        const btn = document.createElement("button");
-        btn.textContent = autor;
-
-        btn.addEventListener("click", () => {
-            if (autor === "All") {
-                General();
-            } else {
-                FiltroConexion(autor);
-            }
-        });
-
-        contenedorFiltro.appendChild(btn);
-    }
 
     const listaHTML = generarLista(fotos);
     var contenedorLista = document.createElement("div");
