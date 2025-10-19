@@ -50,3 +50,19 @@ async function FiltroConexion(autorFiltro) {
 }
 
 General();
+
+function ocultarSplash() {
+    const splash = document.getElementById("splash");
+    if (splash) {
+        splash.style.opacity = "0";
+        setTimeout(() => splash.style.display = "none", 500);
+    }
+}
+
+async function General() {
+    if (fotos.length === 0) {
+        fotos = await conexionLista(100);
+    }
+    ocultarSplash();
+    Home();
+}
