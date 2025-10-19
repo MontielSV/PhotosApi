@@ -1,8 +1,8 @@
 function buscadorfuncion(textoBusqueda) {
-    if (textoBusqueda.length >= 3) {
-        const busquedaMinusculas = textoBusqueda.toLowerCase();
+    if (textoBusqueda.length >= 1) {
+        const busqueda = textoBusqueda.trim();
         const filtrados = fotos.filter(foto =>
-            foto.author.toLowerCase().includes(busquedaMinusculas)
+            foto.id.toString().includes(busqueda)
         );
 
         let listaHTML = generarLista(filtrados);
@@ -40,12 +40,30 @@ function Home() {
     const buscador = document.createElement("input");
     buscador.classList.add("c-buscador");
     buscador.type = "text";
-    buscador.placeholder = "Buscar fotos por autor...";
+    buscador.placeholder = "Buscar fotos por numero (#)...";
     buscador.addEventListener("input", () => {
         buscadorfuncion(buscador.value);
     });
+
+    const autoresEjemplo = ["Alejandro", "John", "Maria", "All"];
     const contenedorFiltro = document.createElement("div");
     contenedorFiltro.classList.add("tipos-container");
+
+    for (let i = 0; i < autoresEjemplo.length; i++) {
+        const autor = autoresEjemplo[i];
+        const btn = document.createElement("button");
+        btn.textContent = autor;
+
+        btn.addEventListener("click", () => {
+            if (autor === "All") {
+                General();
+            } else {
+                FiltroConexion(autor);
+            }
+        });
+
+        contenedorFiltro.appendChild(btn);
+    }
 
     const listaHTML = generarLista(fotos);
     var contenedorLista = document.createElement("div");

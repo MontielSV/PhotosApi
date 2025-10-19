@@ -4,7 +4,7 @@ function Informativa() {
 
     const infoHTML = `
     <section class="c-informativa-ygo">
-        <h1 class="titulo-ygo">Picsum Photo Explorer</h1>
+        <h1 class="titulo-ygo">Picsum Photo</h1>
         <p class="subtitulo-ygo">Tu herramienta visual para explorar, guardar y aprender sobre imágenes libres de uso.</p>
         
         <div class="info-seccion">
@@ -25,9 +25,9 @@ function Informativa() {
         <div class="info-seccion">
             <h2>Tecnología Utilizada</h2>
             <ul>
-                <li><strong>HTML5:</strong> Estructura semántica de las vistas.</li>
-                <li><strong>CSS3:</strong> Estilizado moderno y modular.</li>
-                <li><strong>JavaScript (ES6+):</strong> Lógica de navegación, manipulación del DOM, gestión de datos (localStorage) y consumo de API.</li>
+                <li><strong>HTML:</strong> Estructura semántica de las vistas.</li>
+                <li><strong>CSS:</strong> Estilizado moderno y modular.</li>
+                <li><strong>JavaScript:</strong> Lógica de navegación, manipulación del DOM, gestión de datos (localStorage) y consumo de API.</li>
                 <li><strong>API:</strong> <a href="https://picsum.photos/" target="_blank">Lorem Picsum API</a>.</li>
             </ul>
         </div>
